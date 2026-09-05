@@ -101,9 +101,11 @@ export function FlavorDetailBody({ flavor }: { flavor: Flavor }) {
         />
       </div>
 
-      <Button type="button" onClick={add} className="w-full py-6 text-base">
-        Agregar al pedido · {formatPrice(total)}
-      </Button>
+      <div className="sticky bottom-0 -mx-5 border-t bg-background px-5 pt-4 pb-1">
+        <Button type="button" onClick={add} className="w-full py-6 text-base">
+          Agregar al pedido · {formatPrice(total)}
+        </Button>
+      </div>
     </div>
   );
 }

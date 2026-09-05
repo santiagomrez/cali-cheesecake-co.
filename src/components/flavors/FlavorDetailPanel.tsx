@@ -19,11 +19,13 @@ export function FlavorDetailPanel({ flavor, onClose }: Props) {
   if (isMobile) {
     return (
       <Drawer open={open} onOpenChange={handleOpenChange}>
-        <DrawerContent className="max-h-[92vh] overflow-y-auto">
-          <DrawerHeader className="px-5 text-left">
+        <DrawerContent className="flex max-h-[92vh] flex-col">
+          <DrawerHeader className="shrink-0 px-5 text-left">
             <DrawerTitle className="font-display text-2xl">{flavor?.name}</DrawerTitle>
           </DrawerHeader>
-          {flavor && <FlavorDetailBody flavor={flavor} />}
+          <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
+            {flavor && <FlavorDetailBody flavor={flavor} />}
+          </div>
         </DrawerContent>
       </Drawer>
     );
